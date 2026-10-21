@@ -13,11 +13,11 @@
 
   /* border colour */
   --color-stroke-strong: #252b2780;
-  --color-stroke-weak: #252b27b3;
+  --color-stroke-weak: #d1d5db;
 
   /* text colour */
-  --color-text-strong: #252b27;
-  --color-text-weak: #252b27b3;
+  --color-strong: #252b27;
+  --color-weak: #252b27b3;
 
   /* font family */
   --font-sans: "Inter", sans-serif;
@@ -43,7 +43,7 @@ html {
 
 body {
   background-color: var(--color-background);
-  color: var(--color-text-strong);
+  color: var(--color-strong);
   font-family: var(--font-sans);
   font-size: 1.6rem;
   box-sizing: border-box;
