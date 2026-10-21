@@ -45,6 +45,7 @@ body {
   background-color: var(--color-background);
   color: var(--color-text-strong);
   font-family: var(--font-sans);
+  font-size: 1.6rem;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
