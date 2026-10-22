@@ -51,7 +51,7 @@ export default function MenuMobile() {
         id="mobile-sidebar"
         aria-label="Mobile navigation"
         aria-hidden={!isOpen}
-        className={`fixed inset-y-0 left-0 z-50 flex w-[28rem] max-w-[85vw] flex-col bg-white text-[#252B27] shadow-xl transition-transform duration-300 ease-in-out ${
+        className={`fixed overflow-y-auto inset-y-0 left-0 z-50 flex w-[28rem] max-w-[85vw] flex-col space-y-4 bg-white text-[#252B27] shadow-xl transition-transform duration-300 ease-in-out ${
           isOpen ? "translate-x-0" : "-translate-x-full"
         }`}
       >
@@ -72,7 +72,7 @@ export default function MenuMobile() {
         </div>
 
         {/* Navigation links */}
-        <nav className="flex-1 overflow-y-auto p-4">
+        <nav className="p-4">
           <ul className="space-y-2">
             {navigationItems.map((item) => (
               <li key={item.label}>
@@ -89,16 +89,77 @@ export default function MenuMobile() {
           </ul>
         </nav>
 
-        {/* Sidebar footer */}
-        <div className="border-t border-gray-200 p-5">
-          <Link
-            href="/cart"
-            onClick={closeSidebar}
-            className="block rounded-lg bg-[#145A3A] px-4 py-3 text-center text-[1.6rem] font-medium text-white hover:bg-[#10482E]"
-          >
-            View Cart
-          </Link>
-        </div>
+        <p className="px-4 mb-0">My shopping</p>
+
+        <nav className="px-4 mt-2">
+          <ul>
+            <li>
+              <Link
+                href={"/wishlist"}
+                onClick={closeSidebar}
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-[1.6rem] transition-colors hover:bg-[#145A3A]/10 hover:text-[#145A3A]"
+              >
+                Wishlist
+                <ChevronRight size={18} />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"order"}
+                onClick={closeSidebar}
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-[1.6rem] transition-colors hover:bg-[#145A3A]/10 hover:text-[#145A3A]"
+              >
+                My order
+                <ChevronRight size={18} />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"order"}
+                onClick={closeSidebar}
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-[1.6rem] transition-colors hover:bg-[#145A3A]/10 hover:text-[#145A3A]"
+              >
+                View cart
+                <ChevronRight size={18} />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <nav className="px-4 mt-2">
+          <ul>
+            <li>
+              <Link
+                href={"wishlist"}
+                onClick={closeSidebar}
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-[1.6rem] transition-colors hover:bg-[#145A3A]/10 hover:text-[#145A3A]"
+              >
+                Account
+                <ChevronRight size={18} />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"order"}
+                onClick={closeSidebar}
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-[1.6rem] transition-colors hover:bg-[#145A3A]/10 hover:text-[#145A3A]"
+              >
+                Delivery
+                <ChevronRight size={18} />
+              </Link>
+            </li>
+            <li>
+              <Link
+                href={"order"}
+                onClick={closeSidebar}
+                className="flex items-center justify-between rounded-lg px-4 py-3 text-[1.6rem] transition-colors hover:bg-[#145A3A]/10 hover:text-[#145A3A]"
+              >
+                Help & Contact
+                <ChevronRight size={18} />
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </aside>
     </>
   );
