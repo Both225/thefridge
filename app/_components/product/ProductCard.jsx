@@ -1,23 +1,25 @@
 import Image from "next/image";
-import IconButton from "./ui/IconButton";
+import IconButton from "../ui/IconButton";
 
-function ProductCard({
-  image,
-  name,
-  description,
-  price,
-  alt,
-  discount = false,
-  percent,
-  priceAfterDiscount,
-}) {
+function ProductCard({ product }) {
+  const {
+    image,
+    name,
+    description,
+    price,
+    alt,
+    discount,
+    percentage,
+    priceAfterDiscount,
+  } = product;
+
   return (
     <div className="w-[18rem] rounded-lg overflow-hidden bg-white shadow-raised">
       <div className="relative aspect-square w-full h-60">
         <Image src={image} alt={alt || name} fill className="object-cover" />
         {discount && (
           <p className="absolute top-2 left-2 px-2 py-1 bg-white rounded-2xl font-semibold text-primary text-[1.2rem]">
-            {percent}
+            {percentage}
           </p>
         )}
       </div>
@@ -43,7 +45,7 @@ function ProductCard({
           ) : (
             <p className="font-semibold text-primary ">{price}/kg</p>
           )}
-          <IconButton variant="primary" />
+          <IconButton iconName="plus" variant="primary" />
         </div>
       </div>
     </div>
