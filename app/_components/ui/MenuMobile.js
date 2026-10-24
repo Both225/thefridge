@@ -115,7 +115,7 @@ export default function MenuMobile() {
             </li>
             <li>
               <Link
-                href={"order"}
+                href={"/cart"}
                 onClick={closeSidebar}
                 className="flex items-center justify-between rounded-lg px-4 py-3 text-[1.6rem] transition-colors hover:bg-[#145A3A]/10 hover:text-[#145A3A]"
               >
