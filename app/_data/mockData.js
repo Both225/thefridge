@@ -246,3 +246,9 @@ export const promoItems = [
     href: "/products",
   },
 ];
+
+export const weightItem = [
+  { value: "250", label: "250g - $2.00" },
+  { value: "500", label: "500g - $4.00" },
+  { value: "1000", label: "1kg - $8.00" },
+];

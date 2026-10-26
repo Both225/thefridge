@@ -19,6 +19,9 @@
   --color-strong: #252b27;
   --color-weak: #252b27b3;
 
+  /* badge colour */
+  --color-badge-success: #d0eddb;
+
   /* font family */
   --font-sans: "Inter", sans-serif;
 
