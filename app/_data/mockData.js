@@ -216,3 +216,33 @@ export const mockProductsList = [
     priceAfterDiscount: 2.8,
   },
 ];
+
+export const promoItems = [
+  {
+    id: 1,
+    label: "FRESH PICK OF THE WEEK",
+    title: "Freshness You Can Taste",
+    subtitle: "Fresh groceries, quality ingredients.",
+    buttonText: "Shop fresh products",
+    image: "/images/tomatoes.jfif",
+    href: "/products",
+  },
+  {
+    id: 2,
+    label: "DEALS YOU'LL LOVE",
+    title: "Save More Every Day",
+    subtitle: "Discover great deals on everyday essentials.",
+    buttonText: "Shop discounts",
+    image: "/images/groceries.jfif",
+    href: "/discount",
+  },
+  {
+    id: 3,
+    label: "GOOD FOOD, GOOD MOOD",
+    title: "Fresh Picks for You",
+    subtitle: "Bring home quality ingredients for every meal.",
+    buttonText: "Explore groceries",
+    image: "/images/vegetables.jfif",
+    href: "/products",
+  },
+];
