@@ -1,10 +1,10 @@
-function Badge({ children, bgColour }) {
+function Badge({ text, bgColour }) {
   return (
     <p
       style={{ backgroundColor: bgColour }}
-      className="px-2 py-1 text-[1.2rem] rounded-xl  text-white w-fit"
+      className="px-4 py-2 text-[1.4rem] rounded-xl text-black w-fit"
     >
-      {children}
+      {text}
     </p>
   );
 }

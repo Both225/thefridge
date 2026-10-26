@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "./_components/layout/Header";
+import Footer from "./_components/layout/Footer";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -12,9 +13,12 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-full flex flex-col`}>
+      <body
+        className={`${inter.className} min-h-full grid grid-rows-[min-content_1fr_min-content] grid-cols-1`}
+      >
         <Header />
-        {children}
+        <main className="h-full space-y-8 my-8 px-4">{children}</main>
+        <Footer />
       </body>
     </html>
   );
