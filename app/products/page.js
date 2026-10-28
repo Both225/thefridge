@@ -4,19 +4,19 @@ import HorizontalFilter from "./HorizontalFilter";
 import ProductList from "./ProductList";
 import PaginationWrapper from "./PaginationWrapper";
 import PromoCarousel from "../_components/product/PromoCarousel";
-import { promoItems } from "../_data/mockData";
+import { promoItems } from "../_lib/mockData";
 import ProductSection from "../_components/product/ProductSection";
+import { Suspense } from "react";
 
 function page() {
   return (
     <>
-      <header className="flex justify-between items-end">
-        <Title text={"Fish & Seafood"} />
-        <p className="text-primary-strong font-medium">80 products</p>
-      </header>
+      <Header />
       <OperationBar />
       <HorizontalFilter />
-      <ProductList />
+      <Suspense>
+        <ProductList />
+      </Suspense>
       <PaginationWrapper totalPages={5} />
       <Title text={"Special offer"} />
       <PromoCarousel promoItems={promoItems} />
@@ -26,3 +26,12 @@ function page() {
 }
 
 export default page;
+
+function Header() {
+  return (
+    <header className="flex justify-between items-end">
+      <Title text={"Fish & Seafood"} />
+      <p className="text-primary-strong font-medium">80 products</p>
+    </header>
+  );
+}

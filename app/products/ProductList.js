@@ -1,10 +1,15 @@
 import ProductGrid from "../_components/product/ProductGrid";
-import { mockProductsList } from "../_data/mockData";
+import { getProducts } from "../_services/productService";
+import Loading from "../loading";
 
-function ProductList() {
+async function ProductList() {
+  const products = await getProducts();
+
+  if (!products) return <Loading />;
+
   return (
     <section>
-      <ProductGrid products={mockProductsList} />
+      <ProductGrid products={products} />
     </section>
   );
 }

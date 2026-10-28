@@ -1,5 +1,6 @@
 export const mockProducts = [
   {
+    id: 1,
     image: "/products/fresh-beef.jfif",
     name: "Fresh Beef",
     description: "Premium fresh beef, perfect for family meals.",
@@ -10,6 +11,7 @@ export const mockProducts = [
     priceAfterDiscount: 10.63,
   },
   {
+    id: 2,
     image: "/products/chicken-breast.jpg",
     name: "Chicken Breast",
     description: "Tender boneless chicken breast, packed fresh.",
@@ -20,6 +22,7 @@ export const mockProducts = [
     priceAfterDiscount: 5.4,
   },
   {
+    id: 3,
     image: "/products/fresh-salmon.jfif",
     name: "Fresh Salmon",
     description: "High-quality salmon fillets rich in flavor.",
@@ -30,6 +33,7 @@ export const mockProducts = [
     priceAfterDiscount: 15.0,
   },
   {
+    id: 4,
     image: "/products/fresh-tomatoes.jpg",
     name: "Fresh Tomatoes",
     description: "Juicy red tomatoes, ideal for salads and cooking.",

@@ -3,7 +3,7 @@ import ProductSection from "./_components/product/ProductSection";
 import Collapse from "./_components/ui/Collapse";
 import Hero from "./_components/ui/Hero";
 import Title from "./_components/ui/Title";
-import { mockCategory } from "./_data/mockData";
+import { mockCategory } from "./_lib/mockData";
 
 export default function Home() {
   return (
