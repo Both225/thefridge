@@ -252,3 +252,10 @@ export const weightItem = [
   { value: "500", label: "500g - $4.00" },
   { value: "1000", label: "1kg - $8.00" },
 ];
+
+export const mockSelect = [
+  { value: "500", label: "500g" },
+  { value: "1000", label: "1kg" },
+  { value: "1500", label: "1.5kg" },
+  { value: "2000", label: "2kg" },
+];

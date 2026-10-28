@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <div>
+      <div className="space-y-8">
         <div className="space-y-4 mt-8">
           <Title text={"Featured categories"} />
           <CategoryGrid categories={mockCategory} />

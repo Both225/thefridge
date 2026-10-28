@@ -1,6 +1,6 @@
 "use client";
 
-import { Plus, Heart, Search, ShoppingCart, Menu } from "lucide-react";
+import { Plus, Heart, Search, ShoppingCart, Menu, X } from "lucide-react";
 
 const icons = {
   plus: Plus,
@@ -8,6 +8,7 @@ const icons = {
   search: Search,
   cart: ShoppingCart,
   menu: Menu,
+  x: X,
 };
 
 export default function IconButton({
