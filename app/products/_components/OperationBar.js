@@ -1,4 +1,4 @@
-import IconTextButton from "../_components/ui/IconTextButton";
+import IconTextButton from "../../_components/ui/IconTextButton";
 
 function OperationBar() {
   return (

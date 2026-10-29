@@ -19,7 +19,14 @@ function ProductCard({ product }) {
     <Link href={`/products/${id}`}>
       <div className="w-[18rem] rounded-lg overflow-hidden bg-white shadow-raised">
         <div className="relative aspect-square w-full h-60">
-          <Image src={image} alt={alt || name} fill className="object-cover" />
+          <Image
+            src={image}
+            alt={alt || name}
+            fill
+            sizes="(max-width: 768px) 100vw, 50vw"
+            className="object-cover"
+            preload
+          />
           {discount && (
             <p className="absolute top-2 left-2 px-2 py-1 bg-white rounded-2xl font-semibold text-primary text-[1.2rem]">
               {discount_percentage}

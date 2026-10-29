@@ -12,7 +12,7 @@ function Hero() {
         fill
         priority
         className="object-cover object-center"
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, 50vw"
       />
 
       {/* Dark overlay for readable text */}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Pagination from "../_components/ui/Pagination";
+import Pagination from "../../_components/ui/Pagination";
 
 export default function PaginationWrapper({ totalPages }) {
   const [currentPage, setCurrentPage] = useState(1);

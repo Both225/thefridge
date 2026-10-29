@@ -1,4 +1,4 @@
-import Badge from "../_components/ui/Badge";
+import Badge from "../../_components/ui/Badge";
 
 function HorizontalFilter() {
   return (
