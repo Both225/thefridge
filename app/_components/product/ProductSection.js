@@ -1,4 +1,3 @@
-import { mockProducts } from "@/app/_lib/mockData";
 import ProductGrid from "./ProductGrid";
 import ProductHeader from "./ProductHeader";
 import Button from "../ui/Button";
@@ -7,9 +6,9 @@ import { Suspense } from "react";
 import Loading from "@/app/loading";
 
 async function ProductSection({ title }) {
-  const products = await getProducts();
+  const { products } = await getProducts();
 
-  const showProducts = products.slice(0, 4);
+  const showProducts = products.slice(5, 9);
 
   return (
     <div className="space-y-4 flex flex-col">

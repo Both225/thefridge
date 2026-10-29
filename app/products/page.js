@@ -12,8 +12,9 @@ import ProductList from "./_components/ProductList";
 import PaginationWrapper from "./_components/PaginationWrapper";
 import Header from "./_components/Header";
 import Loading from "../loading";
+import Products from "./_components/Products";
 
-function page() {
+function page({ searchParams }) {
   return (
     <>
       <Header />
@@ -23,10 +24,8 @@ function page() {
       <HorizontalFilter />
 
       <Suspense fallback={<Loading />}>
-        <ProductList />
+        <Products searchParams={searchParams} />
       </Suspense>
-
-      <PaginationWrapper totalPages={5} />
 
       <Title text={"Special offer"} />
 

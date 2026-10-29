@@ -3,20 +3,25 @@
 import { useState } from "react";
 import Pagination from "../../_components/ui/Pagination";
 
+import { useRouter, useSearchParams } from "next/navigation";
+
 export default function PaginationWrapper({ totalPages }) {
   const [currentPage, setCurrentPage] = useState(1);
+  const router = useRouter();
+  const searchParams = useSearchParams();
 
-  function handlePageChange(page) {
+  function onPageChange(page) {
+    const params = new URLSearchParams(searchParams.toString());
+    params.set("page", page || 1);
+    router.push(`?${params.toString()}`);
     setCurrentPage(page);
-
-    // Later, use this value to fetch the selected page's products.
   }
 
   return (
     <Pagination
       currentPage={currentPage}
       totalPages={totalPages}
-      onPageChange={handlePageChange}
+      onPageChange={onPageChange}
     />
   );
 }

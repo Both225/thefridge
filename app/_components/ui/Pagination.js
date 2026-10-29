@@ -29,7 +29,7 @@ export default function Pagination({
 
       <span
         aria-current="page"
-        className="text-[1.4rem] font-medium text-[#252B27]"
+        className="text-[1.4rem] font-medium text-strong"
       >
         {currentPage}
       </span>
