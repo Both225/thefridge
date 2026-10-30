@@ -7,6 +7,7 @@ export async function getProducts({
   categories = "all",
   minPrice,
   maxPrice,
+  sort,
 }) {
   const query = supabase
     .from("products")
@@ -28,6 +29,10 @@ export async function getProducts({
 
   if (maxPrice) {
     query.lte("price", maxPrice || 500);
+  }
+
+  if (sort) {
+    query.order("price", { ascending: sort === "price-asc" });
   }
 
   const { data: products, error, count } = await query.range(from, to);

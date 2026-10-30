@@ -21,8 +21,6 @@ function page({ searchParams }) {
 
       <OperationBar />
 
-      <HorizontalFilter />
-
       <Suspense fallback={<Loading />}>
         <Products searchParams={searchParams} />
       </Suspense>

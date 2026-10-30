@@ -4,6 +4,7 @@ import { useState } from "react";
 import { X, SlidersHorizontal } from "lucide-react";
 
 const categories = [
+  { value: "all", label: "All" },
   { value: "meat", label: "Meat" },
   { value: "fish-seafood", label: "Fish & Seafood" },
   { value: "vegetable", label: "vegetables" },
@@ -158,10 +159,8 @@ export default function FilterBottomSheet({ onApply, selectedFilters = {} }) {
 
                 <div className="space-y-3">
                   {[
-                    ["default", "Recommended"],
                     ["price-asc", "Price: Low to high"],
                     ["price-desc", "Price: High to low"],
-                    ["name-asc", "Name: A to Z"],
                   ].map(([value, label]) => (
                     <label
                       key={value}
