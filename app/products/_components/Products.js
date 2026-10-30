@@ -5,11 +5,16 @@ import Loading from "@/app/loading";
 import { PRODUCT_PER_PAGE } from "@/app/_util/util";
 
 async function Products({ searchParams }) {
-  const { page } = await searchParams;
+  const params = await searchParams;
 
-  const currentPage = page || 1;
+  const currentPage = params.page || 1;
 
-  const { products, count } = await getProducts(currentPage);
+  const { products, count } = await getProducts({
+    page: currentPage,
+    categories: params.category,
+    minPrice: params.minPrice,
+    maxPrice: params.maxPrice,
+  });
 
   const pages = Math.ceil(count / PRODUCT_PER_PAGE);
 

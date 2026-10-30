@@ -8,8 +8,6 @@ import { promoItems } from "../_lib/mockData";
 
 import OperationBar from "./_components/OperationBar";
 import HorizontalFilter from "./_components/HorizontalFilter";
-import ProductList from "./_components/ProductList";
-import PaginationWrapper from "./_components/PaginationWrapper";
 import Header from "./_components/Header";
 import Loading from "../loading";
 import Products from "./_components/Products";
@@ -17,7 +15,9 @@ import Products from "./_components/Products";
 function page({ searchParams }) {
   return (
     <>
-      <Header />
+      <Suspense>
+        <Header />
+      </Suspense>
 
       <OperationBar />
 

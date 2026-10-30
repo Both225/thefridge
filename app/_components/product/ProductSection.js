@@ -6,7 +6,7 @@ import { Suspense } from "react";
 import Loading from "@/app/loading";
 
 async function ProductSection({ title }) {
-  const { products } = await getProducts();
+  const { products } = await getProducts({ page: 1 });
 
   const showProducts = products.slice(5, 9);
 
