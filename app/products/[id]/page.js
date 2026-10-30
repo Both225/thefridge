@@ -8,24 +8,31 @@ import Loading from "@/app/loading";
 /* Data */
 import { weightItem } from "@/app/_lib/mockData";
 
+/* Service */
+import { getProduct } from "@/app/_services/productService";
+
 /* Page specific components */
 import WeightSelector from "./_components/WeightSelector";
 import CollapseContainer from "./_components/CollapseContainer";
 import FloatingAddToCart from "./_components/FloatingAddToCart";
 import ProductInfo from "./_components/ProductInfo";
 
-function ProductDetail({ params }) {
+async function ProductDetail({ params }) {
+  const { id } = await params;
+
+  const product = await getProduct({ id });
+
+  console.log(product);
+
   return (
     <>
-      <Suspense fallback={<Loading />}>
-        <ProductInfo params={params} />
-      </Suspense>
+      <ProductInfo product={product} />
 
       <WeightSelector items={weightItem} />
 
       <CollapseContainer />
 
-      <FloatingAddToCart />
+      <FloatingAddToCart product={product} />
 
       <Suspense fallback={<Loading />}>
         <ProductSection title={"You may also like"} />

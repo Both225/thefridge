@@ -1,3 +1,4 @@
+import Link from "next/link";
 import IconButton from "../ui/IconButton";
 import Logo from "../ui/Logo";
 import MenuMobile from "../ui/MenuMobile";
@@ -8,11 +9,13 @@ function Header() {
       <MenuMobile />
       <Logo />
       <div className="space-x-2">
-        <IconButton
-          iconName="cart"
-          variant="outline"
-          className="border-none text-white"
-        />
+        <Link href={"/cart"}>
+          <IconButton
+            iconName="cart"
+            variant="outline"
+            className="border-none text-white"
+          />
+        </Link>
         <IconButton
           iconName="search"
           variant="outline"

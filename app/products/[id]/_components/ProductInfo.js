@@ -1,13 +1,7 @@
 import Image from "next/image";
 import Badge from "@/app/_components/ui/Badge";
 
-import { getProduct } from "@/app/_services/productService";
-
-async function ProductInfo({ params }) {
-  const { id } = await params;
-
-  const product = await getProduct({ id });
-
+async function ProductInfo({ product }) {
   const { image, stock_quantity, name } = product;
 
   return (

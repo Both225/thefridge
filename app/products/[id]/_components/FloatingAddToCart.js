@@ -2,10 +2,18 @@
 
 import { useEffect, useRef, useState } from "react";
 import { ShoppingCart } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { addToCart } from "@/app/_redux/features/cartSlice";
 
-export default function FloatingAddToCart({ onAddToCart }) {
+export default function FloatingAddToCart({ product }) {
   const buttonRef = useRef(null);
   const [showFloating, setShowFloating] = useState(false);
+
+  const dispatch = useDispatch();
+
+  function onAddToCart(product) {
+    dispatch(addToCart(product));
+  }
 
   useEffect(() => {
     const button = buttonRef.current;
@@ -27,7 +35,7 @@ export default function FloatingAddToCart({ onAddToCart }) {
     <>
       <div ref={buttonRef}>
         <button
-          onClick={onAddToCart}
+          onClick={() => onAddToCart(product)}
           className="w-full bg-primary py-2 rounded-lg text-white"
         >
           Add to Cart
