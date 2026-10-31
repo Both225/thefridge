@@ -15,11 +15,10 @@ async function Products({ searchParams }) {
     minPrice: params.minPrice,
     maxPrice: params.maxPrice,
     sort: params.sort,
+    discount: params.discount,
   });
 
   const pages = Math.ceil(count / PRODUCT_PER_PAGE);
-
-  console.log(pages);
 
   if (!products) return <Loading />;
 

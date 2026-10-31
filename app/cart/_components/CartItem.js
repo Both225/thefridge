@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 import Select from "@/app/_components/ui/Select";
-import IconButton from "@/app/_components/ui/IconButton";
 import { mockSelect } from "@/app/_lib/mockData";
+import DeleteButton from "./DeleteButton";
 
 function CartItem({ product }) {
   const { image, name, price } = product;
@@ -28,7 +28,7 @@ function CartItem({ product }) {
         <Select options={mockSelect} label="quantity" />
       </div>
       <div className="absolute top-0 right-2">
-        <IconButton iconName="x" size="sm" />
+        <DeleteButton product={product} />
       </div>
     </li>
   );

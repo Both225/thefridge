@@ -1,6 +1,6 @@
 import Image from "next/image";
-import IconButton from "../ui/IconButton";
 import Link from "next/link";
+import SmallBtnAddToCart from "@/app/cart/_components/SmallBtnAddToCart";
 
 function ProductCard({ product }) {
   const {
@@ -16,8 +16,8 @@ function ProductCard({ product }) {
   } = product;
 
   return (
-    <Link href={`/products/${id}`}>
-      <div className="w-[18rem] rounded-lg overflow-hidden bg-white shadow-raised">
+    <div className="w-[18rem] rounded-lg overflow-hidden bg-white shadow-raised">
+      <Link href={`/products/${id}`}>
         <div className="relative aspect-square w-full h-60">
           <Image
             src={image}
@@ -33,7 +33,9 @@ function ProductCard({ product }) {
             </p>
           )}
         </div>
-        <div className="p-3 space-y-6">
+      </Link>
+      <div className="p-3 space-y-6">
+        <Link href={`/products/${id}`}>
           <div>
             <p className="font-medium">{name}</p>
             <p className="text-weak text-[1.2rem] leading-tight">
@@ -42,24 +44,24 @@ function ProductCard({ product }) {
                 : description}
             </p>
           </div>
-          <div className="flex justify-between items-end">
-            {discount ? (
-              <div className="flex flex-col items-start">
-                <p className="line-through text-[1.2rem] text-weak leading-none">
-                  {price}
-                </p>
-                <p className="font-semibold text-primary leading-none">
-                  {price_after_discount}/kg
-                </p>
-              </div>
-            ) : (
-              <p className="font-semibold text-primary ">{price}/kg</p>
-            )}
-            <IconButton iconName="plus" variant="primary" />
-          </div>
+        </Link>
+        <div className="flex justify-between items-end">
+          {discount ? (
+            <div className="flex flex-col items-start">
+              <p className="line-through text-[1.2rem] text-weak leading-none">
+                {price}
+              </p>
+              <p className="font-semibold text-primary leading-none">
+                {price_after_discount}/kg
+              </p>
+            </div>
+          ) : (
+            <p className="font-semibold text-primary ">{price}/kg</p>
+          )}
+          <SmallBtnAddToCart product={product} />
         </div>
       </div>
-    </Link>
+    </div>
   );
 }
 

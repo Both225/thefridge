@@ -22,11 +22,11 @@ async function ProductDetail({ params }) {
 
   const product = await getProduct({ id });
 
-  console.log(product);
-
   return (
     <>
-      <ProductInfo product={product} />
+      <Suspense fallback={<Loading />}>
+        <ProductInfo product={product} />
+      </Suspense>
 
       <WeightSelector items={weightItem} />
 

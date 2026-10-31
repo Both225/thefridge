@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ShoppingCart } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { addToCart } from "@/app/_redux/features/cartSlice";
+import toast from "react-hot-toast";
 
 export default function FloatingAddToCart({ product }) {
   const buttonRef = useRef(null);
@@ -13,6 +14,8 @@ export default function FloatingAddToCart({ product }) {
 
   function onAddToCart(product) {
     dispatch(addToCart(product));
+
+    toast.success("Added to cart successfully!");
   }
 
   useEffect(() => {
@@ -36,7 +39,7 @@ export default function FloatingAddToCart({ product }) {
       <div ref={buttonRef}>
         <button
           onClick={() => onAddToCart(product)}
-          className="w-full bg-primary py-2 rounded-lg text-white"
+          className="w-full bg-primary py-2 rounded-lg cursor-pointer text-white"
         >
           Add to Cart
         </button>

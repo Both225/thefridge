@@ -7,7 +7,6 @@ import Title from "../_components/ui/Title";
 import { promoItems } from "../_lib/mockData";
 
 import OperationBar from "./_components/OperationBar";
-import HorizontalFilter from "./_components/HorizontalFilter";
 import Header from "./_components/Header";
 import Loading from "../loading";
 import Products from "./_components/Products";

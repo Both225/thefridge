@@ -8,6 +8,7 @@ export async function getProducts({
   minPrice,
   maxPrice,
   sort,
+  discount = false,
 }) {
   const query = supabase
     .from("products")
@@ -33,6 +34,10 @@ export async function getProducts({
 
   if (sort) {
     query.order("price", { ascending: sort === "price-asc" });
+  }
+
+  if (discount) {
+    query.eq("discount", true);
   }
 
   const { data: products, error, count } = await query.range(from, to);

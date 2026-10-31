@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import ProductGrid from "./ProductGrid";
 import ProductHeader from "./ProductHeader";
 import Button from "../ui/Button";
@@ -5,10 +7,12 @@ import { getProducts } from "@/app/_services/productService";
 import { Suspense } from "react";
 import Loading from "@/app/loading";
 
-async function ProductSection({ title }) {
-  const { products } = await getProducts({ page: 1 });
+async function ProductSection({ title, productType }) {
+  const type = productType === "discount" && true;
 
-  const showProducts = products.slice(5, 9);
+  const { products } = await getProducts({ page: 1, discount: type });
+
+  const showProducts = products.slice(1, 4);
 
   return (
     <div className="space-y-4 flex flex-col">

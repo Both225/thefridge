@@ -3,7 +3,6 @@ import ProductSection from "./_components/product/ProductSection";
 import Collapse from "./_components/ui/Collapse";
 import Hero from "./_components/ui/Hero";
 import Title from "./_components/ui/Title";
-import { mockCategory } from "./_lib/mockData";
 
 export default function Home() {
   return (
@@ -12,10 +11,10 @@ export default function Home() {
       <div className="space-y-8">
         <div className="space-y-4 mt-8">
           <Title text={"Featured categories"} />
-          <CategoryGrid categories={mockCategory} />
+          <CategoryGrid />
         </div>
-        <ProductSection title={"Discount products"} />
-        <ProductSection title={"New products"} />
+        <ProductSection title={"Discount products"} productType={"discount"} />
+        <ProductSection title={"New products"} productType={"new-arrival"} />
         <div>
           <Title text={"Why choose the fridge"} />
           <CollapseContainer />
