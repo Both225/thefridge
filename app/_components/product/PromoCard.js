@@ -10,8 +10,14 @@ export default function PromoCard({ promo }) {
       {/* Background image */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url('${image}')` }}
-        aria-hidden="true"
+        style={{
+          backgroundImage: `url("${image}")`,
+        }}
+      />
+
+      <div
+        className="absolute inset-0 bg-gradient-to-r
+    from-red-700 via-red-700/90 to-transparent"
       />
 
       {/* Red overlay for readability */}
