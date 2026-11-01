@@ -7,14 +7,14 @@ import ButtonCheckOut from "./ButtonCheckOut";
 function CartSummary() {
   const items = useSelector((state) => state.cart.cart) || [];
 
-  console.log(items);
+  const price = items.map((item) => item.price * item.quantity);
 
-  const subPrice = items.reduce((acc, cur) => {
-    return acc + cur.price;
+  const subPrice = price.reduce((acc, cur) => {
+    return acc + cur;
   }, 0);
 
   const discount = items.reduce((acc, cur) => {
-    return acc + (cur.price * cur.price_after_discount) / 100;
+    return (acc + (cur.price * cur.price_after_discount) / 100) * cur.quantity;
   }, 0);
 
   const delivery = 1;

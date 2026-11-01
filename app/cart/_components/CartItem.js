@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-import Select from "@/app/_components/ui/Select";
-import { mockSelect } from "@/app/_lib/mockData";
 import DeleteButton from "./DeleteButton";
+import SumProductPrice from "./SumProductPrice";
+import QuantityButton from "./QuantityButton";
 
 function CartItem({ product }) {
-  const { image, name, price } = product;
+  const { id, image, name, price } = product;
 
   return (
     <li className="px-2 py-6 relative border-b-2 border-b-stroke-weak flex justify-between items-center bg-surface rounded-lg p-4">
@@ -22,15 +22,15 @@ function CartItem({ product }) {
         </div>
         <div className="space-y-2">
           <p className="font-medium">{name}</p>
-          <p className="text-[1.4rem] text-weak font-medium">500g</p>
-          <p className="font-medium text-primary">${price}.00</p>
+          <p className="text-[1.4rem] text-weak font-medium">${price}/1kg</p>
+          <SumProductPrice price={price} id={id} />
         </div>
       </div>
       <div className="self-end">
-        <Select options={mockSelect} label="quantity" />
+        <QuantityButton id={id} />
       </div>
       <div className="absolute top-0 right-2">
-        <DeleteButton product={product} />
+        <DeleteButton product={product} id={id} />
       </div>
     </li>
   );

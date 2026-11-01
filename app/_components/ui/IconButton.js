@@ -8,6 +8,7 @@ import {
   Menu,
   X,
   ArrowLeft,
+  Minus,
 } from "lucide-react";
 
 const icons = {
@@ -19,6 +20,7 @@ const icons = {
   x: X,
   back: ArrowLeft,
   heart: Heart,
+  sub: Minus,
 };
 
 export default function IconButton({
@@ -30,6 +32,7 @@ export default function IconButton({
   className = "",
   type = "button",
   fill,
+  disabled = false,
   ...props
 }) {
   const Icon = icons[iconName] || Plus;
@@ -52,6 +55,7 @@ export default function IconButton({
       onClick={onClick}
       aria-label={label}
       title={label}
+      disabled={disabled}
       className={`
         inline-flex shrink-0 items-center justify-center
         rounded-lg transition-colors duration-200 hover:bg-primary-strong cursor-pointer
