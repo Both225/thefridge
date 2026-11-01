@@ -9,6 +9,7 @@ export async function getProducts({
   maxPrice,
   sort,
   discount = false,
+  search,
 }) {
   const query = supabase
     .from("products")
@@ -38,6 +39,10 @@ export async function getProducts({
 
   if (discount) {
     query.eq("discount", true);
+  }
+
+  if (search) {
+    query.ilike("name", `%${search}%`);
   }
 
   const { data: products, error, count } = await query.range(from, to);

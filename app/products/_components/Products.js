@@ -16,6 +16,7 @@ async function Products({ searchParams }) {
     maxPrice: params.maxPrice,
     sort: params.sort,
     discount: params.discount,
+    search: params.search,
   });
 
   const pages = Math.ceil(count / PRODUCT_PER_PAGE);

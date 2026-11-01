@@ -2,6 +2,7 @@ import Link from "next/link";
 import IconButton from "../ui/IconButton";
 import Logo from "../ui/Logo";
 import MenuMobile from "../ui/MenuMobile";
+import HeaderSearch from "../ui/HeaderSearch";
 
 function Header() {
   return (
@@ -16,11 +17,7 @@ function Header() {
             className="border-none text-white"
           />
         </Link>
-        <IconButton
-          iconName="search"
-          variant="outline"
-          className="border-none text-white"
-        />
+        <HeaderSearch />
       </div>
     </div>
   );
