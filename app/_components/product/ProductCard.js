@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import SmallBtnAddToCart from "@/app/cart/_components/SmallBtnAddToCart";
+import AddToWishlistButton from "./AddToWishlistButton";
 
 function ProductCard({ product }) {
   const {
@@ -16,7 +17,7 @@ function ProductCard({ product }) {
   } = product;
 
   return (
-    <div className="w-[18rem] rounded-lg overflow-hidden bg-white shadow-raised">
+    <div className="w-[18rem] relative rounded-lg overflow-hidden bg-white shadow-raised">
       <Link href={`/products/${id}`}>
         <div className="relative aspect-square w-full h-60">
           <Image
@@ -28,8 +29,8 @@ function ProductCard({ product }) {
             preload
           />
           {discount && (
-            <p className="absolute top-2 left-2 px-2 py-1 bg-white rounded-2xl font-semibold text-primary text-[1.2rem]">
-              {discount_percentage}
+            <p className="absolute top-2 left-2 px-4 py-1 bg-primary-light rounded-2xl font-semibold text-primary text-[1.2rem]">
+              {discount_percentage}%
             </p>
           )}
         </div>
@@ -47,12 +48,12 @@ function ProductCard({ product }) {
         </Link>
         <div className="flex justify-between items-end">
           {discount ? (
-            <div className="flex flex-col items-start">
-              <p className="line-through text-[1.2rem] text-weak leading-none">
-                {price}
-              </p>
+            <div className="flex items-end gap-2">
               <p className="font-semibold text-primary leading-none">
                 {price_after_discount}/kg
+              </p>
+              <p className="line-through text-[1.2rem] text-weak leading-none">
+                ${price}
               </p>
             </div>
           ) : (
@@ -60,6 +61,9 @@ function ProductCard({ product }) {
           )}
           <SmallBtnAddToCart product={product} />
         </div>
+      </div>
+      <div className="absolute right-2 top-2">
+        <AddToWishlistButton item={product} />
       </div>
     </div>
   );

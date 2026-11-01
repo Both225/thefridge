@@ -1,6 +1,14 @@
 "use client";
 
-import { Plus, Heart, Search, ShoppingCart, Menu, X } from "lucide-react";
+import {
+  Plus,
+  Heart,
+  Search,
+  ShoppingCart,
+  Menu,
+  X,
+  ArrowLeft,
+} from "lucide-react";
 
 const icons = {
   plus: Plus,
@@ -9,6 +17,8 @@ const icons = {
   cart: ShoppingCart,
   menu: Menu,
   x: X,
+  back: ArrowLeft,
+  heart: Heart,
 };
 
 export default function IconButton({
@@ -19,6 +29,7 @@ export default function IconButton({
   size = "md",
   className = "",
   type = "button",
+  fill,
   ...props
 }) {
   const Icon = icons[iconName] || Plus;
@@ -52,7 +63,7 @@ export default function IconButton({
       `}
       {...props}
     >
-      {Icon && <Icon size={20} aria-hidden="true" />}
+      {Icon && <Icon size={20} aria-hidden="true" fill={fill ?? "none"} />}
     </button>
   );
 }

@@ -1,11 +1,13 @@
 import Image from "next/image";
 import Badge from "@/app/_components/ui/Badge";
+import IconButton from "@/app/_components/ui/IconButton";
+import BackButton from "./BackButton";
 
 async function ProductInfo({ product }) {
   const { image, stock_quantity, name } = product;
 
   return (
-    <>
+    <div className="relative">
       <div className="relative h-100 w-full">
         <Image
           src={image}
@@ -23,7 +25,8 @@ async function ProductInfo({ product }) {
         />
         <p className="text-[1.8rem] font-medium">{name}</p>
       </header>
-    </>
+      <BackButton />
+    </div>
   );
 }
 

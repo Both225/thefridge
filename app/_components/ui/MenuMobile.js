@@ -7,13 +7,16 @@ import { Menu, X, ChevronRight } from "lucide-react";
 const navigationItems = [
   { label: "Home", href: "/" },
   { label: "All Groceries", href: "/products" },
-  { label: "Meat & Seafood", href: "/products?category=meat-seafood" },
+  {
+    label: "Meat & Seafood",
+    href: "/products?category=meat,fish-seafood",
+  },
   {
     label: "Vegetables & Fruits",
-    href: "/products?category=vegetables-fruits",
+    href: "/products?category=vegetable,fruit",
   },
-  { label: "Canned Food", href: "/products?category=canned-food" },
-  { label: "Offers", href: "/products?category=offers" },
+  { label: "Canned Food", href: "/products?category=canned" },
+  { label: "Offers", href: "/products?discount=true" },
 ];
 
 export default function MenuMobile() {
