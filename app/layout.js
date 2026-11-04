@@ -1,10 +1,5 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Header from "./_components/layout/Header";
-import Footer from "./_components/layout/Footer";
-import Providers from "./_redux/Providers";
-import CartPersistence from "./cart/_components/CartPersistence";
-import ToastProvider from "./_components/ui/ToastProvider";
 
 const inter = Inter({ subsets: ["latin"], display: "swap" });
 
@@ -16,16 +11,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body
-        className={`${inter.className} min-h-full grid grid-rows-[min-content_1fr_min-content] grid-cols-1`}
-      >
-        <Providers>
-          {/* <CartPersistence /> */}
-          <Header />
-          <main className="h-full space-y-8 my-8 px-4">{children}</main>
-          <Footer />
-          <ToastProvider />
-        </Providers>
+      <body className={`${inter.className}`}>
+        <main>{children}</main>
       </body>
     </html>
   );

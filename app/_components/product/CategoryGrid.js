@@ -14,8 +14,8 @@ const categories = [
   },
   { value: "juice", label: "Juice", image: "/products/orange-juice.jfif" },
   {
-    value: "vegatable",
-    label: "Vegatables",
+    value: "vegetable",
+    label: "Vegetables",
     image: "/products/fresh-tomatoes.jpg",
   },
   { value: "dairy", label: "Dairy", image: "/products/fresh-milk.jfif" },

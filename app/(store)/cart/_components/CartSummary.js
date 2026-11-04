@@ -9,6 +9,8 @@ function CartSummary() {
 
   const price = items.map((item) => item.price * item.quantity);
 
+  console.log(price);
+
   const subPrice = price.reduce((acc, cur) => {
     return acc + cur;
   }, 0);

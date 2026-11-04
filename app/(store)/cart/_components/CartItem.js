@@ -30,7 +30,7 @@ function CartItem({ product }) {
         <QuantityButton id={id} />
       </div>
       <div className="absolute top-0 right-2">
-        <DeleteButton product={product} id={id} />
+        <DeleteButton product={product} />
       </div>
     </li>
   );
