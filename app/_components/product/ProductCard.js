@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import SmallBtnAddToCart from "@/app/cart/_components/SmallBtnAddToCart";
+import SmallBtnAddToCart from "@/app/(store)/cart/_components/SmallBtnAddToCart";
 import AddToWishlistButton from "./AddToWishlistButton";
 
 function ProductCard({ product }) {

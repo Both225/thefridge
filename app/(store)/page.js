@@ -1,8 +1,8 @@
-import CategoryGrid from "./_components/product/CategoryGrid";
-import ProductSection from "./_components/product/ProductSection";
-import Collapse from "./_components/ui/Collapse";
-import Hero from "./_components/ui/Hero";
-import Title from "./_components/ui/Title";
+import CategoryGrid from "../_components/product/CategoryGrid";
+import ProductSection from "../_components/product/ProductSection";
+import Collapse from "../_components/ui/Collapse";
+import Hero from "../_components/ui/Hero";
+import Title from "../_components/ui/Title";
 
 export default function Home() {
   return (

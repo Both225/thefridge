@@ -1,4 +1,4 @@
-import Title from "../_components/ui/Title";
+import Title from "@/app/_components/ui/Title";
 
 import CheckoutForm from "./_components/CheckoutForm";
 import OrderSummary from "./_components/OrderSummary";

@@ -1,15 +1,15 @@
 import { Suspense } from "react";
 
-import ProductSection from "../_components/product/ProductSection";
-import Title from "../_components/ui/Title";
+import ProductSection from "@/app/_components/product/ProductSection";
+import Title from "@/app/_components/ui/Title";
 
-import { promoItems } from "../_lib/mockData";
+import { promoItems } from "../../_lib/mockData";
 
 import OperationBar from "./_components/OperationBar";
 import Header from "./_components/Header";
-import Loading from "../loading";
+import Loading from "@/app/loading";
 import Products from "./_components/Products";
-import AutoProductCarousel from "../_components/ui/AutoProductsCarousel";
+import AutoProductCarousel from "../../_components/ui/AutoProductsCarousel";
 
 function page({ searchParams }) {
   return (

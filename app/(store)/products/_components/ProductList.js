@@ -1,6 +1,4 @@
-import ProductGrid from "../../_components/product/ProductGrid";
-import { getProducts } from "../../_services/productService";
-import Loading from "../../loading";
+import ProductGrid from "@/app/_components/product/ProductGrid";
 
 async function ProductList({ products }) {
   return (

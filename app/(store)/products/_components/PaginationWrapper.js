@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Pagination from "../../_components/ui/Pagination";
+import Pagination from "@/app/_components/ui/Pagination";
 
 import { useRouter, useSearchParams } from "next/navigation";
 
