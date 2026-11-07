@@ -1,4 +1,4 @@
-import Title from "../_components/ui/Title";
+import Title from "@/app/_components/ui/Title";
 
 import ProductList from "./_components/ProductList";
 

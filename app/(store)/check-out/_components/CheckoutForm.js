@@ -101,7 +101,7 @@ function InputField({
         onChange={(e) => onChange(e)}
         placeholder={placeholder}
         type={type}
-        className="px-3 py-2 border-2 border-stroke-weak rounded-lg text-strong "
+        className="px-3 py-2 border-2 border-stroke-weak rounded-lg text-strong"
       />
     </div>
   );
