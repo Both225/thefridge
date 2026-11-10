@@ -3,6 +3,8 @@
 import { Select } from "antd";
 import { useState } from "react";
 
+import Title from "@/app/_components/ui/Title";
+
 function CheckoutForm() {
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
@@ -17,34 +19,37 @@ function CheckoutForm() {
   }
 
   return (
-    <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
-      <InputField
-        label={"Name"}
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-        placeholder={"Name"}
-      />
-      <InputField
-        label={"Phone number"}
-        value={phoneNumber}
-        onChange={(e) => setPhoneNumber(e.target.value)}
-        placeholder={"Phone number"}
-        type="number"
-      />
-      <InputField
-        label={"Address"}
-        value={address}
-        onChange={(e) => setAddress(e.target.value)}
-        placeholder={"Address (area and street)"}
-      />
-      <div className="flex gap-4">
-        <CitySelect value={city} onChange={(value) => setCity(value)} />
-        <DistrictSelect
-          value={district}
-          onChange={(value) => setDistrict(value)}
+    <>
+      <Title text={"Adding shipping address"} />
+      <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
+        <InputField
+          label={"Name"}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder={"Name"}
         />
-      </div>
-    </form>
+        <InputField
+          label={"Phone number"}
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+          placeholder={"Phone number"}
+          type="number"
+        />
+        <InputField
+          label={"Address"}
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+          placeholder={"Address (area and street)"}
+        />
+        <div className="flex gap-4">
+          <CitySelect value={city} onChange={(value) => setCity(value)} />
+          <DistrictSelect
+            value={district}
+            onChange={(value) => setDistrict(value)}
+          />
+        </div>
+      </form>
+    </>
   );
 }
 

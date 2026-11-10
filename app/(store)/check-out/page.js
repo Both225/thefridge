@@ -19,8 +19,6 @@ async function CheckOutPage() {
 
   return (
     <>
-      <Title text={"Adding shipping address"} />
-
       <OrderSummary />
       <CheckoutForm />
     </>
