@@ -1,4 +1,5 @@
-import supabase from "../_lib/supabase";
+import { createClient } from "../_lib/supabase/server";
+
 import { notFound } from "next/navigation";
 import { PRODUCT_PER_PAGE } from "../_util/util";
 
@@ -11,6 +12,8 @@ export async function getProducts({
   discount = false,
   search,
 }) {
+  const supabase = await createClient();
+
   const query = supabase
     .from("products")
     .select(
@@ -56,6 +59,8 @@ export async function getProducts({
 }
 
 export async function getProduct({ id }) {
+  const supabase = await createClient();
+
   const { data, error } = await supabase
     .from("products")
     .select(

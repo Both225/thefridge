@@ -1,5 +1,9 @@
-function AuthForm({ children }) {
-  return <form className="space-y-4">{children}</form>;
+function AuthForm({ children, onSubmit }) {
+  return (
+    <form onSubmit={onSubmit} className="space-y-4">
+      {children}
+    </form>
+  );
 }
 
 export default AuthForm;
